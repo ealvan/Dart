@@ -27,11 +27,13 @@ class _MyHome extends State<MyHome> {
 
   Widget build(BuildContext context) {
     final myController_nombre = TextEditingController();
-    final myController_edad = TextEditingController();
+    final myController_apellidos = TextEditingController();
+    final myController_nacimiento = TextEditingController();
     void dispose() {
       // Clean up the controller when the widget is disposed.
       myController_nombre.dispose();
-      myController_edad.dispose();
+      myController_apellidos.dispose();
+      myController_nacimiento.dispose();
       super.dispose();
     }
 
@@ -39,17 +41,25 @@ class _MyHome extends State<MyHome> {
         controller: myController_nombre,
         style: style,
         decoration: InputDecoration(
-          contentPadding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
-          hintText: "Email",
+          contentPadding: EdgeInsets.all(5.0),
+          hintText: "Nombres",
           border: OutlineInputBorder(borderRadius: BorderRadius.circular(12.0)),
         ));
 
-    final edad = TextField(
-        controller: myController_edad,
+    final apellidos = TextField(
+        controller: myController_apellidos,
         style: style,
         decoration: InputDecoration(
-          contentPadding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
-          hintText: "Email",
+          contentPadding: EdgeInsets.all(5.0),
+          hintText: "Apellidos",
+          border: OutlineInputBorder(borderRadius: BorderRadius.circular(12.0)),
+        ));
+    final fechaNacimiento = TextField(
+        controller: myController_nacimiento,
+        style: style,
+        decoration: InputDecoration(
+          contentPadding: EdgeInsets.all(5.0),
+          hintText: "Fecha de Nacimiento",
           border: OutlineInputBorder(borderRadius: BorderRadius.circular(12.0)),
         ));
 
@@ -59,7 +69,7 @@ class _MyHome extends State<MyHome> {
       color: Color(0xff01A0C7),
       child: MaterialButton(
         minWidth: MediaQuery.of(context).size.width,
-        padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
+        padding: EdgeInsets.all(5.0),
         onPressed: () {
           return showDialog(
             context: context,
@@ -67,13 +77,14 @@ class _MyHome extends State<MyHome> {
               return AlertDialog(
                 // Retrieve the text the user has entered by using the
                 // TextEditingController.
-                content: Text(
-                    myController_nombre.text + "<-->" + myController_edad.text),
+                content: Text(myController_nombre.text +
+                    "<-->" +
+                    myController_apellidos.text),
               );
             },
           );
         },
-        child: Text("Login",
+        child: Text("Enterate!",
             textAlign: TextAlign.center,
             style: style.copyWith(
                 color: Colors.white, fontWeight: FontWeight.bold)),
@@ -84,22 +95,23 @@ class _MyHome extends State<MyHome> {
         child: Container(
           color: Colors.white,
           child: Padding(
-            padding: const EdgeInsets.all(36.0),
+            padding: const EdgeInsets.all(5.0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                SizedBox(height: 45.0),
+                SizedBox(height: 15.0),
                 nombre,
-                SizedBox(height: 25.0),
-                edad,
-                SizedBox(
-                  height: 35.0,
-                ),
-                loginButon,
+                SizedBox(height: 15.0),
+                apellidos,
                 SizedBox(
                   height: 15.0,
                 ),
+                fechaNacimiento,
+                SizedBox(
+                  height: 15.0,
+                ),
+                loginButon,
               ],
             ),
           ),
