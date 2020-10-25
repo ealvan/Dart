@@ -27,10 +27,11 @@ class _MyHome extends State<MyHome> {
 
   Widget build(BuildContext context) {
     final myController_nombre = TextEditingController();
-    //final myController_edad = TextEditingController();
+    final myController_edad = TextEditingController();
     void dispose() {
       // Clean up the controller when the widget is disposed.
       myController_nombre.dispose();
+      myController_edad.dispose();
       super.dispose();
     }
 
@@ -44,7 +45,7 @@ class _MyHome extends State<MyHome> {
         ));
 
     final edad = TextField(
-        //controller: myController_edad,
+        controller: myController_edad,
         style: style,
         decoration: InputDecoration(
           contentPadding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
@@ -66,7 +67,8 @@ class _MyHome extends State<MyHome> {
               return AlertDialog(
                 // Retrieve the text the user has entered by using the
                 // TextEditingController.
-                content: Text(myController_nombre.text),
+                content: Text(
+                    myController_nombre.text + "<-->" + myController_edad.text),
               );
             },
           );
