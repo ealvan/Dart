@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'estudio_time/time.dart';
 
 void main() {
   runApp(MyApp());
@@ -71,15 +72,16 @@ class _MyHome extends State<MyHome> {
         minWidth: MediaQuery.of(context).size.width,
         padding: EdgeInsets.all(5.0),
         onPressed: () {
+          Cabala persona1 = new Cabala(
+              myController_nombre.text + ' ' + myController_apellidos.text,
+              myController_nacimiento.text);
           return showDialog(
             context: context,
             builder: (context) {
               return AlertDialog(
                 // Retrieve the text the user has entered by using the
                 // TextEditingController.
-                content: Text(myController_nombre.text +
-                    "<-->" +
-                    myController_apellidos.text),
+                content: Text(persona1.toString()),
               );
             },
           );
