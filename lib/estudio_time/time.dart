@@ -1,9 +1,6 @@
 //import 'package:hello_world__1/hello_world__1.dart' as hello_world__1;
 
-void main() {
-  Cabala persona = new Cabala("Juan Pepe Longobardi Delay", "19/9/1999");
-  print(persona);
-}
+void main() {}
 
 class Cabala {
   String dia;
