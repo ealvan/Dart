@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'estudio_time/time.dart';
-
 import 'package:flutter_auth_buttons/flutter_auth_buttons.dart';
 
 void main() {
@@ -124,25 +122,6 @@ class _MyHome extends State<MyHome> {
       autofocus: false,
       obscureText: true,
     );
-//*************************************** */
-    final apellidos = TextField(
-        controller: myController_apellidos,
-        style: style,
-        decoration: InputDecoration(
-          contentPadding: EdgeInsets.all(5.0),
-          hintText: "Apellidos",
-          border: OutlineInputBorder(borderRadius: BorderRadius.circular(12.0)),
-        ));
-    final fechaNacimiento = TextField(
-        controller: myController_nacimiento,
-        style: style,
-        decoration: InputDecoration(
-          contentPadding: EdgeInsets.all(5.0),
-          hintText: "Fecha de Nacimiento",
-          border: OutlineInputBorder(borderRadius: BorderRadius.circular(12.0)),
-        ));
-//***************************************
-
     final registerButton = Material(
       elevation: 5.0,
       borderRadius: BorderRadius.circular(30.0),
