@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'estudio_time/time.dart';
 
-//import 'package:flutter_auth_buttons/flutter_auth_buttons.dart';
+import 'package:flutter_auth_buttons/flutter_auth_buttons.dart';
+
 void main() {
   runApp(MyApp());
 }
@@ -94,14 +95,11 @@ class _MyHome extends State<MyHome> {
     final emailField = EMailTextFormField(
       onSaved: (String email) => _email = email,
     );
-    final googleButton = TextFormField(
-      decoration: InputDecoration(
-        icon: Icon(Icons.email,
-            size: IconTheme.of(context).size,
-            color: IconTheme.of(context).color),
-        labelText: 'Ingrese su email',
-      ),
+    final googleButton = GoogleSignInButton(
+      onPressed: () {/* ... */},
+      darkMode: false, // default: false
     );
+    final facebookButton = FacebookSignInButton(onPressed: () {});
     //contrasenia
     final password = TextField(
       decoration: InputDecoration(
@@ -196,6 +194,11 @@ class _MyHome extends State<MyHome> {
                   height: 5.0,
                 ),
                 registerButton,
+                SizedBox(
+                  height: 5.0,
+                ),
+                googleButton,
+                facebookButton
               ],
             ),
           ),
