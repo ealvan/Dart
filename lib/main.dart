@@ -100,11 +100,11 @@ class _MyHome extends State<MyHome> {
             padding: const EdgeInsets.all(5.0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: <Widget>[
-                SizedBox(height: 15.0),
+                SizedBox(height: 5.0),
                 nombre,
-                SizedBox(height: 15.0),
+                SizedBox(height: 5.0),
                 apellidos,
                 SizedBox(
                   height: 15.0,
