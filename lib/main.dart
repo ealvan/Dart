@@ -64,7 +64,7 @@ class MyHome extends StatefulWidget {
 }
 
 class _MyHome extends State<MyHome> {
-  TextStyle style = TextStyle(fontFamily: "Montserrat", fontSize: 4.0);
+  TextStyle style = TextStyle(fontFamily: "Montserrat", fontSize: 15.0);
   String _email;
   Widget build(BuildContext context) {
     final myController_usuario = TextEditingController();
@@ -144,7 +144,9 @@ class _MyHome extends State<MyHome> {
         child: Text("Registrate!",
             textAlign: TextAlign.center,
             style: style.copyWith(
-                color: Colors.white, fontWeight: FontWeight.bold)),
+                color: Colors.white,
+                fontWeight: FontWeight.bold,
+                fontSize: 20.0)),
       ),
     );
     return Scaffold(
